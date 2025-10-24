@@ -18,13 +18,40 @@
 
   <div class="container">
     <h2>Доступные акции</h2>
-    <div class="promo-list" id="promo-list">
+    <div id="promo-groups-container">
       </div>
   </div>
 
   <div class="mini-cart" id="mini-cart" style="display: none;">
     </div>
 
+  <div class="modal-overlay" id="promo-modal" style="display: none;">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h3 id="modal-title">Название акции</h3>
+        <button class="modal-close" id="modal-close-btn">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <p id="modal-description">Описание акции</p>
+        
+        <h4>1. Выберите товары для покупки (<span id="modal-buy-total">0</span> / <span id="modal-buy-needed">4</span>)</h4>
+        <div class="assortment-list" id="modal-buy-list">
+          </div>
+
+        <h4>2. Выберите подарок (<span id="modal-gift-total">0</span> / <span id="modal-gift-needed">1</span>)</h4>
+        <div class="assortment-list" id="modal-gift-list">
+          </div>
+      </div>
+      
+      <div class="modal-footer">
+        <span class="modal-total-price">Итого: <strong id="modal-total-price">0 грн</strong></span>
+        <button class="btn-primary" id="modal-add-to-cart-btn" disabled>Добавить в заказ</button>
+      </div>
+
+    </div>
+  </div>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
