@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход для партнеров</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container login-page">
+    <h2>Вход для партнеров</h2>
+    <p>Введите ваш номер телефона для входа в кабинет</p>
+    <form id="login-form">
+      <input
+        type="tel"
+        id="phone"
+        value="+380"
+        placeholder="+380 (__) ___-__-__"
+      />
+      <button type="submit">Войти</button>
+      <p class="error-message" id="login-error"></p>
+    </form>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
