@@ -1,0 +1,296 @@
+/* Общие стили */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Стили кнопок */
+button, .btn-primary, .btn-secondary {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: #007aff;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #e5e5ea;
+  color: #007aff;
+}
+.btn-secondary:hover {
+  background-color: #dcdce0;
+}
+
+/* --- Экран Логина --- */
+.login-page {
+  max-width: 400px;
+  margin-top: 100px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.login-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.login-page input[type="tel"] {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.login-page button {
+  background-color: #34c759;
+  color: white;
+  padding: 12px;
+}
+.login-page .error-message {
+  color: #ff3b30;
+  font-size: 14px;
+  min-height: 1.2em; /* Резервируем место */
+}
+
+/* --- Шапка (Header) --- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.app-header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.app-header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.app-header .logout-btn {
+  font-size: 14px;
+  padding: 8px 12px;
+  background: #f2f2f7;
+  color: #ff3b30;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* --- Страница Акций --- */
+.promo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding-bottom: 100px; /* Отступ для мини-корзины */
+}
+.promo-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.promo-card h3 { margin-top: 0; }
+.promo-card .promo-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007aff;
+  margin: 10px 0;
+}
+.promo-card .promo-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Прижимает к низу карточки */
+}
+.promo-card .quantity-input {
+  width: 60px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* --- Мини-Корзина --- */
+.mini-cart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* --- Страница Оформления --- */
+.checkout-page h2 { text-align: center; }
+.checkout-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+}
+/* Стили формы */
+.shipping-form {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.shipping-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.shipping-form input,
+.shipping-form textarea {
+  width: 100%;
+  box-sizing: border-box; /* Важно! */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.shipping-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.checkout-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+/* --- Состав заказа (Checkout) --- */
+.order-summary {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  align-self: flex-start; /* Не растягиваться */
+}
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.summary-item span { max-width: 70%; }
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+hr {
+  border: none;
+  border-top: 1px solid #e5e5ea;
+  margin: 15px 0;
+}
+
+/* --- Страница "Спасибо" --- */
+.thank-you-page {
+  text-align: center;
+  margin-top: 80px;
+}
+.thank-you-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: auto;
+}
+.thank-you-box h2 { margin-top: 15px; }
+
+/* Анимация галочки */
+.checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 3;
+  stroke: #4caf50;
+  stroke-miterlimit: 10;
+  margin: auto;
+  box-shadow: inset 0px 0px 0px #4caf50;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: #4caf50;
+  fill: none;
+  animation: stroke .6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke .3s cubic-bezier(0.65, 0, 0.45, 1) .8s forwards;
+}
+@keyframes stroke {
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes scale {
+  0%, 100% { transform: none; }
+  50% { transform: scale3d(1.1, 1.1, 1); }
+}
+@keyframes fill {
+  100% { box-shadow: inset 0px 0px 0px 40px #4caf50; }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .checkout-content {
+    grid-template-columns: 1fr; /* В один столбец на мобильных */
+  }
+  .order-summary {
+    order: -1; /* Поменять блоки местами */
+  }
+  .app-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  .mini-cart {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+}
