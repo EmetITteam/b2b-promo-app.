@@ -24,12 +24,17 @@ button, .btn-primary, .btn-secondary {
   display: inline-block;
   white-space: nowrap;
 }
+button:disabled {
+  background-color: #e5e5ea;
+  color: #999;
+  cursor: not-allowed;
+}
 
 .btn-primary {
   background-color: #007aff;
   color: white;
 }
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
@@ -37,7 +42,7 @@ button, .btn-primary, .btn-secondary {
   background-color: #e5e5ea;
   color: #007aff;
 }
-.btn-secondary:hover {
+.btn-secondary:hover:not(:disabled) {
   background-color: #dcdce0;
 }
 
@@ -102,6 +107,20 @@ button, .btn-primary, .btn-secondary {
 }
 
 /* --- Страница Акций --- */
+
+/* НОВЫЕ СТИЛИ ГРУПП */
+.promo-group {
+  margin-bottom: 30px;
+}
+.promo-group-title {
+  font-size: 24px;
+  color: #000;
+  border-bottom: 2px solid #007aff;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+/* Конец новых стилей */
+
 .promo-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -123,6 +142,12 @@ button, .btn-primary, .btn-secondary {
   color: #007aff;
   margin: 10px 0;
 }
+.promo-card .original-price {
+  font-size: 16px;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
 .promo-card .promo-actions {
   display: flex;
   gap: 10px;
@@ -135,6 +160,24 @@ button, .btn-primary, .btn-secondary {
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 16px;
+}
+/* Стили для сложной акции 4+1 */
+.promo-card.complex {
+  background-color: #f7f7f7;
+  border: 1px solid #007aff;
+}
+.promo-card.complex .promo-actions {
+  /* Кнопка на всю ширину */
+  flex-direction: column;
+}
+.promo-card.complex .btn-primary {
+  width: 100%;
+}
+.assortment-preview {
+  font-size: 13px;
+  color: #555;
+  padding-left: 20px;
+  margin-bottom: 15px;
 }
 
 /* --- Мини-Корзина --- */
@@ -219,6 +262,29 @@ hr {
   border-top: 1px solid #e5e5ea;
   margin: 15px 0;
 }
+/* НОВЫЕ СТИЛИ для Checkout */
+.summary-item.complex-promo {
+  flex-direction: column;
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 6px;
+}
+.complex-details {
+  font-size: 13px;
+  padding-left: 15px;
+  border-top: 1px dashed #ccc;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+.complex-details strong {
+  color: #333;
+}
+.complex-details ul {
+  margin: 5px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
 
 /* --- Страница "Спасибо" --- */
 .thank-you-page {
@@ -274,6 +340,95 @@ hr {
   100% { box-shadow: inset 0px 0px 0px 40px #4caf50; }
 }
 
+/* --- НОВЫЕ СТИЛИ: Модальное Окно --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e5e5ea;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+.modal-close {
+  font-size: 30px;
+  font-weight: 300;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  line-height: 1;
+}
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+.modal-body h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-top: 1px solid #e5e5ea;
+  background: #f7f7f7;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.modal-total-price {
+  font-size: 18px;
+}
+.assortment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.assortment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+.assortment-item.gift label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.assortment-item input[type="number"] {
+  width: 60px;
+  text-align: center;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
   .checkout-content {
@@ -292,5 +447,8 @@ hr {
     gap: 10px;
     padding: 15px;
     text-align: center;
+  }
+  .modal-content {
+    width: 95%;
   }
 }
