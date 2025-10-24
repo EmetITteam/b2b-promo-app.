@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container checkout-page">
+    <h2>Оформление заказа</h2>
+    
+    <div class="checkout-content">
+      <div class="order-summary" id="order-summary">
+        <h3>Ваш заказ</h3>
+        <hr>
+        <div class="summary-total">
+          <strong>Итого:</strong>
+          <strong id="summary-total-price">0 грн</strong>
+        </div>
+      </div>
+
+      <form class="shipping-form" id="checkout-form">
+        <h3>Данные доставки</h3>
+        <label>
+          Получатель (ФИО):
+          <input type="text" name="recipientName" id="recipientName" required />
+        </label>
+        <label>
+          Адрес доставки (Новая Почта, адрес):
+          <input type="text" name="shippingAddress" id="shippingAddress" required />
+        </label>
+        <label>
+          Комментарий к заказу:
+          <textarea name="comment" id="comment"></textarea>
+        </label>
+        
+        <div class="checkout-actions">
+          <a href="promotions.html" class="btn-secondary">
+            &larr; Назад к акциям
+          </a>
+          <button type="submit" class="btn-primary">
+            Подтвердить заказ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
