@@ -18,8 +18,13 @@
 
   <div class="container">
     <h2>Доступные акции</h2>
-    <div id="promo-groups-container">
+
+    <div class="tabs-nav" id="tabs-nav">
       </div>
+
+    <div class="tabs-content" id="tabs-content">
+      </div>
+
   </div>
 
   <div class="mini-cart" id="mini-cart" style="display: none;">
@@ -37,12 +42,10 @@
         <p id="modal-description">Описание акции</p>
         
         <h4>1. Выберите товары для покупки (<span id="modal-buy-total">0</span> / <span id="modal-buy-needed">4</span>)</h4>
-        <div class="assortment-list" id="modal-buy-list">
-          </div>
+        <div class="assortment-list" id="modal-buy-list"></div>
 
         <h4>2. Выберите подарок (<span id="modal-gift-total">0</span> / <span id="modal-gift-needed">1</span>)</h4>
-        <div class="assortment-list" id="modal-gift-list">
-          </div>
+        <div class="assortment-list" id="modal-gift-list"></div>
       </div>
       
       <div class="modal-footer">
@@ -53,6 +56,6 @@
     </div>
   </div>
   <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=1.2"></script>
 </body>
 </html>
