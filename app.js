@@ -14,7 +14,7 @@ const storage = {
   getLastOrder: () => sessionStorage.getItem('b2b_lastOrder')
 };
 
-// --- Глобальные переменные для данных (чтобы не дергать mockData 100 раз) ---
+// --- Глобальные переменные для   данных (чтобы не дергать mockData 100 раз) ---
 let allPromotionsData = [];
 let currentModalPromo = null;
 
