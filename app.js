@@ -486,7 +486,7 @@ function updateModalState() {
   if (!currentModalPromo) return;
 
   const { buyQuantity, getQuantity, assortment } = currentModalPromo;
-  const { totalBuyQty, totalPrice }_ = getModalSelections();
+  const { totalBuyQty, totalPrice } = getModalSelections();
 
   // 1. Обновляем счетчик "Куплено"
   document.getElementById('modal-buy-total').textContent = totalBuyQty;
